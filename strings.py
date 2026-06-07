@@ -25,3 +25,7 @@ d = "sher coder"
 print(d[0:4:1])
 print(d[5:10:1])
 print(d[0:6:2])
+print(d[5::1]) # when you keep the stop point empty it means you are instructing the systrem to go at the last of the string. 
+print(d[::])# printing the whole string as it is. 
+
+# DO PRACTICE OF THIS TOPIC. 
