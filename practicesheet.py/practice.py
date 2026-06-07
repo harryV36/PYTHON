@@ -1,6 +1,7 @@
 #print(ord("10")) # it will error cauz ord only accepts one character at a time and here 1 and 0 are both different characters. 
 #print(ord("1")) 
 #print(ord("2"))
+#MY OWN IDEA OF TESTING SOMETHING IN THE BELOW WRITTEN CODE I HAVE CHANGED THE COMPARED THE ASCII CODE OF CHARACTER a with integer 45.
 
 b=45
 a=ord("a")
