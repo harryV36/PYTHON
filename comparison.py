@@ -21,5 +21,3 @@ print(ord("b")) # ASCII VALUE IS 98.
 print("a">"b") # OUTPUT IS FALSE. 
 print("abc">"acd") # they will be compared on ascii value of each alpahabet presnt in the string, checked on the basis of presidence. 
 # check gpt for explaination on comapring different types of datatypes using comapriosn operators. 
-
-#LOGICAL OPERATORS:- 
