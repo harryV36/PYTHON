@@ -45,3 +45,9 @@ elif note == 30 or note == 40 or note==50:
     print("buy the cone")
 else:
     print("you can buy whatever ice cream you want")
+    
+# FOR BETTER UNDERSTANDING READ CHATGPT CONVO. 
+# IF CODE HAS if,elif,else then between them only one can be executed. 
+#preidence hoti h , sbse jyada hoti h if ki then elif ki then else ki. 
+# we can make multiple elif statements.
+
