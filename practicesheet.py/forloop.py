@@ -131,3 +131,20 @@
 #         print(f" given string {a} is a palindrome string. ")
 #     else:
 #         print(f"given string {a} is not a palindrome string. ") # wrong code but yeah try it later now move to question 13. understand how to convert the logic into algo and then algo into code by keeping it in mind that what should be done and what should be not. like what is needed in the code and algo and what is not according to the logic. 
+
+#Count all letters,digits,and special symbols from given string. given string :- f@ck@ssB1tch, expected outcome :- total count of chars,digits and symbols :- chars = some number , digits = some numbers , symbol = some number.  
+# a=input(" enter string :- ")
+# chars=0
+# digits=0
+# symbols=0
+# for i in range(0,len(a),1):
+#     if a[i].isalpha():
+#      chars=chars+1 
+#     elif a[i].isdigit(): 
+#         digits=digits+1
+#     else:
+#         symbols=symbols+1
+# print("number of chars :- " ,chars)
+# print(" number of digits :- ", digits)
+# print(" number of symbols :- ",symbols)
+#\n is used print output in new line. 
