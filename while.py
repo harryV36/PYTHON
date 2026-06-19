@@ -38,9 +38,47 @@
 # third , how will iteration stop :- a==0. 
 # fourth, which is what work happens each iteration which will be responsible for giving us the output :- a%10. 
 # also i think here what we have to do is that we can store a%10 in a varaible and then just print the variable outside loop and we have our reversed number. 
-a=int(input(" enter your number :- "))
-reverse_number=0
+# after getting help from chatgpt. 
+# a=int(input("enter the number :- ")) 
+# reverse_num=0
+# while a>0:
+#     digit=a%10
+#     a=a//10
+#     reverse_num=reverse_num*10+digit
+# print(reverse_num)
+
+# Question 3 is checking the palondrome numner using while loop. 
+# same logic as reverse number question 2 just compare both original number and reverse number and then it is a palindrome. 
+# part A
+# a=int(input("enter the number of your choice :- "))
+# reverse_num=0
+# while a>0:
+#     digit=a%10
+#     a=a//10
+#     reverse_num=reverse_num*10+digit
+# print(reverse_num)
+# # Part B here we  reverse the reverse_num to get the original a which is being replaced by 0 in part A. 
+# digit2=reverse_num%10
+# reverse_num=reverse_num//10
+# a=reverse_num*10+digit2 
+# print(a)
+# # part C and main part of the question. where we are comparing the reverse_num with original a which comes from part B. 
+# if reverse_num==a:
+#     print(f" entered number {a} is a palindrome. ")
+# else:
+#     print(f" entered number {a} is not a palindrome.")
+
+# above is the wrong code which is totally written by me. below is the code which is right and here logic is same as reverse number problem just we can save original value of a which is number given by the user as an input to compare it in if block.    
+a=int(input("enter number :- ")) 
+original=a
+reverse_num=0
 while a>0:
-    reverse_number=a%10
+    digit=a%10
     a=a//10
-print(reverse_number)
+    reverse_num=reverse_num*10+digit
+print(reverse_num)
+if reverse_num==original:
+    print(f" entered number {original} is the palindrome.")
+else:
+    print(f" entered number {original} is not the palindrome.")
+    
