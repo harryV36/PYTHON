@@ -3,7 +3,11 @@
 #print(ord("2"))
 #MY OWN IDEA OF TESTING SOMETHING IN THE BELOW WRITTEN CODE I HAVE CHANGED THE COMPARED THE ASCII CODE OF CHARACTER a with integer 45.
 
-b=45
-a=ord("a")
-print(a>b)
+# b=45
+# a=ord("a")
+# print(a>b)
+
+st="lion"
+print(len(st))
+
 

@@ -69,16 +69,38 @@
 #     print(f" entered number {a} is not a palindrome.")
 
 # above is the wrong code which is totally written by me. below is the code which is right and here logic is same as reverse number problem just we can save original value of a which is number given by the user as an input to compare it in if block.    
-a=int(input("enter number :- ")) 
-original=a
-reverse_num=0
-while a>0:
-    digit=a%10
-    a=a//10
-    reverse_num=reverse_num*10+digit
-print(reverse_num)
-if reverse_num==original:
-    print(f" entered number {original} is the palindrome.")
-else:
-    print(f" entered number {original} is not the palindrome.")
-    
+# a=int(input("enter number :- ")) 
+# original=a
+# reverse_num=0
+# while a>0:
+#     digit=a%10
+#     a=a//10
+#     reverse_num=reverse_num*10+digit
+# print(reverse_num)
+# if reverse_num==original:
+#     print(f" entered number {original} is the palindrome.")
+# else:
+#     print(f" entered number {original} is not the palindrome.") 
+
+#BUILDING GAME WHICH GUESS THE RANDOM NUMBER GENERATED. 
+# Libraries in python :- we are going to use random library to generate the randon number.
+# import random 
+# num=random.randint(1,10)
+# tries=0
+# # print(num)
+# while True:
+#     guess = int(input(" please guess your number :- "))
+#     if num == guess:
+#         tries+=1
+#         print(f" you are right, you guessed the number in {tries} tries .")
+#         break
+#     elif num < guess:
+#         tries+=1
+#         print("go a little lower ")
+#     elif num > guess:
+#         tries+=1
+#         print(" go little higher " )
+        
+#     else:
+#         tries+=1
+#         print(" sorry you are wrong ")
