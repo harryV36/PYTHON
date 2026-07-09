@@ -48,9 +48,9 @@
 # palindrome("naman")
 # palindrome("cursor")
         
-def hello():
-    return " hello are you my nigga "      # return is used provide the value at block where you called your function. 
+# def hello():
+#     return " hello are you my nigga "      # return is used provide the value at block where you called your function. 
 
-hello()
-print(hello()) 
+# hello()
+# print(hello()) 
 # learn difference between return and print(). very very very very important. 
