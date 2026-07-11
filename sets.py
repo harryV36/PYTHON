@@ -35,10 +35,52 @@
 
 # SETS METHODS :- 
 #sets method provide mutability to sets. and they can search hash values.
-a={1,2,3,4}
-a.add(5)  # adds an element to the sets. 
+# a={1,2,3,4}
+# a.add(5)  # adds an element to the sets. 
+# print(a)
+# a.remove(5) # removes an element and also gives error if the element is not found. 
+# print(a)
+# a.discard(4) # also removes the element and gives no error if the element is not found. 
+# print(a)
+# #popped_element=a.pop(), removes a random element. 
+# a.pop()
+# print(a) # it pop random values has it sees hash values, so te smalllest hash valueed element is removed first.
+# a.clear() # empty whole set
+# print(a) 
+
+# some more methods/operations that can be performed between two sets. 
+a={1,2,3,4,5}
+b={4,5,8,9,10}
+#union_set=a.union(b) unifies the two different sets.
+s=a.union(b)
+print(s)
+#or
+p=a|b
+print(p) 
+
+#intersection set :-
+q=a.intersection(b)
+r=a&b
+print(q)
+print(r)
+
+# difference set :- 
+t=a.difference(b)
+u=b-a
+print(t)
+print(u)
+
+# symmetric difference :- removing common part and joining two sets and their remainig elements. 
+v=a.symmetric_difference(b)
+w=a^b
+print(v)
+print(w)
+
+# compound operators :- 
+b-=a    # if we want the operations to be done inside the b only or a. there are also other compund operators u can use. 
 print(a)
-a.remove(5) # removes an element and also gives error if the element is not found. 
-print(a)
-a.discard(4) # also removes the element and gives no error if the element is not found. 
-print(a)
+# shortcut for union is print(a | b) , | here is pipe operator which is a staright line. 
+# shortcut for intersection of a and b is print(a & b )
+# shortcut for difference of a and b is print(a-b).
+# shortcut for  symmteric difference is print(a^b). 
+
