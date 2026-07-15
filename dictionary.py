@@ -80,8 +80,8 @@ c={10:100,20:200,30:300,40:400,50:500}
 # QUESTIONS OF DICTIONARIES :- 
 # QUESTION 1 :- WRITE A PYTHON SCRIPT TO MERGE TWO DICTIONARIES. 
 
-a={1:10,2:20,3:30}
-# b={4:40,5:50,6:60}
+# a={1:10,2:20,3:30}
+# # b={4:40,5:50,6:60}
 # merging two dictionaries :- 
 # first way :- using update method. 
 # a.update(b) # b will be upadted inside a.
@@ -114,5 +114,49 @@ a={1:10,2:20,3:30}
 # print(f"your total of all values of the dictionary is :- ", total ) 
 
 # another way using in-built method named sum :- 
-print(sum(a.values())) 
+# print(sum(a.values())) 
 
+# QUESTION 3 :- count the frequency of each elements in a list. 
+b=[1,1,1,2,2,2,3,3,3,4,4,4,5,5,6,7,8]
+ #frequency here means that how many times an element is repeated or has occured in the list or a dictionary. 
+# we will use dctionary here to count the frequency of all elements in the list. 
+# we can count the frequency of one element using count function. 
+# sample code :- 
+# count=0
+# for i in b:
+#     if i==1:
+#         count+=1
+# print(count)
+# but to count the frequency of all unknown elements in the list what we'll do i that we will use dictionary here. 
+# dict={1:3,2:3,3:3,4:3,5:2,6:1,7:1,8:1} this kinda dictionary is what we have to get for the output. 
+# d={}
+# for i in b:
+#     if i in d.keys():
+#         d[i] +=1
+#     else:
+#         d[i]=1
+# print(d)
+# NOTE :- IN ABOVE CODE, WHAT IS HAPPENING IS THAT THERE'S THE LIST a, then we created d={}, an empty dictionary just like what we do with count and sum. 
+# now, for i in b:
+#          if i in d.key():
+#          d[i] +=1 
+#           else:
+#           d[i]=1
+# here first i which are the element in list b goes through if i in d.keys(), agar i as a key exist krt hain h dictionary d main toh uski value bada do +1. 
+# aur agr woh nhi krta hain exist toh usko as a key add krdo dictionary main aur usko ek value 1 dedo. 
+# now first i goes which is one if statemnt false and the else is runned so d[1]=1, so d={1:1}
+# now another 1 comes , and if statement is runned and then is goes d[1]+=1, so it becomes d={1:2}. 
+# and this how the frequency of all elements are counted. 
+
+# QUESTION 4 :- write a python program to combine two dictionary by adding values for common keys. 
+a={1:10,2:20,4:30}
+b={4:40,5:50,6:60}
+
+for i in b:
+    if i in a.keys():
+        a[i] += b[i] # updating of value of common keys. 
+    else:
+        a[i]=b[i]    # addition of key-value pair of b into a. 
+print(a)
+
+# DICTIONARY COMPLETED !!! 
