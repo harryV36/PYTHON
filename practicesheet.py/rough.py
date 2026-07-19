@@ -7,3 +7,17 @@
 # some ways told by person on stackoverflow :- 
 # (a) isinstance(<var>, int).
 # holy some advance stuff but do read the stackoverflow article on it. this is exercise for exception handling. 
+
+# checking some if condition doubt :- 
+# a=int(input(" enter the number :- "))
+# if a==type(int):
+#     print(" the variable a is an integer")
+# a = int(input("Enter number: ")) # important points to remember differences between various type operations. 
+
+# print(a)
+# print(type(a))
+# print(type(int)) 
+
+print(type(5))
+print(int)
+print(type(5) == int)

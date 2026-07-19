@@ -51,17 +51,61 @@
 
 # chatgpt challenge part :- if the user enters both 0 and any other value than integer, then how should the code should have been written ?  
 # d=10/a   # NOTE :- this line will cause error as  the ZeroDivisionError would occur before the try block. so the exception ahndling won't be done then. 
-#NOTE:- Experiment  1:- using continue and asking for a's value again.
-try:
-    a=int(input("enter your number :- "))
-except ValueError:
-    print(" give integer value to the variable ")
-    # continue 
-a=int(input(" enter ur number :- "))
-try:
-    d=10/a # NOTE :- always remember you have to wrote the code that will give exception errot inside try:. the whole code not just print or bits of code. 
-    print(d)
+#NOTE:- Experiment 1:- using continue and asking for a's value again.
+# try:
+#     a=int(input("enter your number :- "))
+# except ValueError:
+#     print(" give integer value to the variable ")
+#     continue 
+# a=int(input(" enter ur number :- "))
+# try:
+#     d=10/a # NOTE :- always remember you have to wrote the code that will give exception errot inside try:. the whole code not just print or bits of code. 
+#     print(d)
 
-except ZeroDivisionError:
-    print("sorry , you cannot divide by 0")
-print(" ok ! Division has been completed.")
+# except ZeroDivisionError:
+#     print("sorry , you cannot divide by 0")
+# print(" ok ! Division has been completed.")
+
+# NOTE :- ABOVE IS THE FAILED ATTEMPT. 
+# EXPERIMENT 2 :- using continue again but now going staright to dividing the value by a insatead of taking new value of a. 3 NOTE :- FAILED HYPOTHESIS. 
+
+#NOTE :-  another try wth gpt based algorithm :- 
+# FIRST PART OF THE CODE :- MAKING INPUT WORK. 
+# another one , try try but don't cry. 
+# while True:   # JOB 1 :- GETTING VALUE RIGHT 
+#     try:
+#         a=int(input(" enter your number :- "))
+#         break
+#     except ValueError:
+#         print(" enter the integer as a input ")
+# try: # JOB 2 :- DIVIDING THE VALUE. 
+#     d=10/a
+#     print(d)
+# except ZeroDivisionError:
+#     print(" give non-zero value as a input ")
+# if a!=0:
+#     print(" ok ! the division has been completed ")
+  
+# study the above program it took whole one day just to write this one program.   
+
+# NOTE :- there are many errors so we can write like this to tackle the problem if we don't know what kinda error can come in our program. 
+#syntax :- 
+#try:
+    #something
+# except Exception as err:
+#     print(f"sorry there is an err as {err}")
+# implementing above learnt syntax in the newly written code. 
+while True:
+    try:
+        a=int(input("enter your number :- "))
+        break 
+    except Exception as err:
+        print(f"sorry there is an err as {err}")
+
+try:
+    d=10/a
+    print(d)
+except Exception as err:
+    print(f"there is some err as {err}")
+if a!=0:
+    print(" ok ! Division has been done. ")
