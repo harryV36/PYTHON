@@ -95,17 +95,76 @@
 # except Exception as err:
 #     print(f"sorry there is an err as {err}")
 # implementing above learnt syntax in the newly written code. 
-while True:
-    try:
-        a=int(input("enter your number :- "))
-        break 
-    except Exception as err:
-        print(f"sorry there is an err as {err}")
+# while True:
+#     try:
+#         a=int(input("enter your number :- "))
+#         break 
+#     except Exception as err:
+#         print(f"sorry there is an err as {err}")
 
+# try:
+#     d=10/a
+#     print(d)
+# except Exception as err:
+#     print(f"there is some err as {err}")
+# if a!=0:
+#     print(" ok ! Division has been done. ")   
+# STUDY ALL TYPES OF EXCEPTIONS. 
+
+# else :- run code only if no exception occurs.
+# Below is the Example of else block in Exception Handling. 
+# a=int(input("enter your number :- "))
+# try:
+#     d=10/a
+#     print(d)
+# except Exception as err:
+#     print(f"Sorry there is an err as {err}")
+    
+# else:
+#     print(" good there is no exception ")
+    
+# in above program if exception block runs then else block will not run but if exception block doesn't run then else block will run. 
+
+
+# NOTE :- finally :- Run code no matter what, whether there's an exception or not. finally will run deosn't matter what happens in the code, doesn't matter how many exceptions come. 
+# a=int(input("enter your number :- "))
+# try:
+#     d=10/a
+#     print(d)
+# except Exception as err:
+#     print(f"Sorry there is an err as {err}")
+    
+# else:
+#     print(" good there is no exception ")
+
+# finally:
+#     print(" i will run no matter what")
+    
+# NOTE :- raise :- Manually throw an exception. we can throw exceptions that do not exist. main khudse koi exception throw krna chah rha hu.  
+#NOTE:- try and except are mostly used in Exception handling. 
+# raise code :- 
+# age =int(input(" tell your age :- "))
+# if age<10 or age > 18:
+#     raise ValueError("Your age must between 10 and 18")
+# else:
+#     print(" welcome to the club !")
+
+# print(" the club will start soon ")
+
+# NOTE :- there is problem with above code which is that the last print statement which is the " the club will start soon !" is not printing so to handle that we will use try and except in the below next code. 
+age =int(input(" tell your age :- "))
 try:
-    d=10/a
-    print(d)
+    if age<10 or age > 18:
+        raise ValueError("Your age must between 10 and 18")
+    else:
+        print(" welcome to the club !")
+        
 except Exception as err:
-    print(f"there is some err as {err}")
-if a!=0:
-    print(" ok ! Division has been done. ")
+    print(f" an error occured as {err} ")
+
+print(" the club will start soon !  ")
+# in the above code we have catched our own manually maded error in exception object err. 
+# also printing the line the club will start soon !.
+# THE ABOVE CODE IS JUST PERFECT EXAMPLE OF RAISE AND EXCEPT. 
+
+#NOTE :- EXCEPTION HANDLING DONE !!
