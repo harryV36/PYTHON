@@ -9,6 +9,7 @@ print(data)
 cleaned_data = []
 for x in data:
     cleaned_data.append(x.strip())
-print(cleaned_data,end="")
-
+print(cleaned_data,end="\n")
+for i in range(len(cleaned_data)):
+    print(f" employee number {i+1} :- {cleaned_data[i]}")
 # print(len(cleaned_data[0])) # testing if there is space between strings or not. 

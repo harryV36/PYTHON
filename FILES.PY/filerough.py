@@ -18,6 +18,17 @@
 # print(type(a))
 # print(type(int)) 
 
-print(type(5))
-print(int)
-print(type(5) == int)
+# print(type(5))
+# print(int)
+# print(type(5) == int)
+# working on loops with list indexing methods with gpt :- 
+names = ["A","B","C"]
+for i in range(len(names)):
+    print(f"fruit name is :- {names[i]}") # ok this can be the key ! do another experiment from google solutions. 
+
+# this one is not mine but founded it on google and it was worth the shot so. 
+fruits=['apple','banana','cherry']
+# LOOP THORUGH THE LIST INDICES(0,1,2)
+for i in range(len(fruits)):
+    print(f"index{i} contains {fruits[i]}")
+
