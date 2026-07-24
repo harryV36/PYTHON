@@ -1,1 +1,0 @@
-python -u "c:\Users\Dell\Desktop\PYTHON\FILES.PY\filehandlingbasicproject.py\main.py"

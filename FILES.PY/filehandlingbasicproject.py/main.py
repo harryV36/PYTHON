@@ -21,9 +21,15 @@ def createfile():    # here we have opened and created and written in file.
         readfileandfolder() 
         name=input(" please tell your file name :- ")
         p=Path(name)  # NOTE :- HERE WE STORED WHOLE PATH IN 'p' variable. 
-        if not p.exists() and p.is_file(): #NOTE :- if file doesn't exist already in the system then it will move to next line and whole new file will be created. p.is_file() ensures that p is the file. 
-            #NOTE :- what happens in above line is that if p.exists() is true that files exists already in system then not will give false then else statement will ran and if p.exists() is false then not will turn it into true and it will run the next line with open statement which will create a new file. 
-            #NOTE:- what not do is that it turns true into false and false into true. 
+        print("Current Working Directory:", Path.cwd())
+        print("Full Path:", p.resolve())
+        print("Exists?:", p.exists())
+        print("Is File?:", p.is_file())
+        if not p.exists(): #NOTE :- if file doesn't exist already in the system then it will move to next line and whole new file will be created. p.is_file() ensures that p is the file. 
+                                           #NOTE :- if not p.exists() and p.is_file() this line has some bug in it.  
+                                           #NOTE :- what happens in above line is that if p.exists() is true that files exists already in system then not will give false then else statement will ran and if p.exists() is false then not will turn it into true and it will run the next line with open statement which will create a new file. 
+                                           #NOTE:- what not do is that it turns true into false and false into true. 
+                                           #NOTE :- p.is_file() returns True only if the path already exists AND it is a file. if the path doesn't exist yet, it returns False. 
             with open(p,"w") as fs:
                 data=input('what you want to write in this file :- ')
                 fs.write(data)
@@ -53,7 +59,7 @@ def readfile():
 def updatefile():
     try:
         readfileandfolder()
-        update=input(" tell which file you want to update")
+        update=input(" tell which file you want to update :- ")
         p=Path(update)
         if p.exists() and p.is_file():
             print(" press 1 for changing the name of your file")
@@ -64,18 +70,36 @@ def updatefile():
                 name2=input(" tell your new  file name ? :- ")
                 p2=Path(name2)
                 p.rename(p2)
+                print(" your file name has been changed !! ")
             if res==2:
                 with open(p,'w') as fs:
                     data=input(" tell what you wanna write and this will overwrite the existing data in the file :- ")
                     fs.write(data)
+                    print(" the existing data in the file has been overwritten !!")
             if res==3:
                 with open(p,'a') as fs:
-                    data=input(" tell what you wnat to append :- ")
-                    fs.write(data)
+                    data=input(" tell what you want to append :- ")
+                    fs.write(" " +data)
+                    print(" the new data has been appended into the file !!")
     except Exception as err:
         print(f" an error occured as {err} ")
         
 #NOTE :- here in above we are updating the file. we will ask the user three options when he has asked to update his file, (1) to change the name of the file. (2) to overwrite the already existing data in the chosen file. (3) to append some data into the file.
+def deletefile():
+    readfileandfolder()
+    delete_filename=input(" enter the name of the file that you want to delete :- ")
+    p=Path(delete_filename)
+    print("Exists:", p.exists())
+    print("Is file:", p.is_file())
+    print("Resolved path:", p.resolve())
+    try:
+        if p.exists() and p.is_file():
+            p.unlink()
+            print(f" {delete_filename} has been deleted ! ")
+        else:
+            print("File does not exist.")
+    except Exception as err:
+        print(f"an error occured as {err} ")
 # NOTE :- HERE WE ARE ASKING USER WHAT OPERATIONS HE WANTS TO PERFORM. 
 
 print("press 1 for creating a file")
@@ -92,4 +116,7 @@ if check==2:
     readfile()
 if check==3: # NOTE :- HERE WE ASK THE USER FOR UPDATE AND WE GIVE HIM THREE OPTIONS :- (1) FILE NAME UPDATE  (2)  DATA OVERWRITE OF FILE. (3) APPEND THE DATA OF FILE.  
     updatefile()
-    
+if check==4:
+    deletefile()
+
+# HOMEWORK :- BUILD CRUD PROJECT FOR FOLDERS. 
