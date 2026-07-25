@@ -18,6 +18,12 @@
 # print(type(a))
 # print(type(int)) 
 
-print(type(5))
-print(int)
-print(type(5) == int)
+# print(type(5))
+# print(int)
+# print(type(5) == int)
+
+def hello():
+    print("hello")
+
+x=hello()
+print(x)
