@@ -154,6 +154,10 @@ class School:
     @ classmethod 
     def show_total(cls):
         print(cls.total_students)
+    
+    @staticmethod
+    def add(a,b): #NOTE :- If a Function already receives values through parameters, you usually don't need to ask the user  for input inside that function. Choose one approach :- either pass arguments as parameters or collect them with input(). or if you want to take numbers from user or any data so don't take parameters, just do this :- def add() : a=int(input(" first number :- ")) , b=int(input(" second number :- ")). then call print(School.add())
+        return a+b    #NOTE :- print line will never be used after return cause when pyhton sees return the function ends immediately. 
 obj1=School()
 obj1.students("HARRY",22)
 
@@ -165,3 +169,6 @@ obj3.students("SAURABH",22)
 
 School.show_total()
 
+print(School.add(15,25))
+
+# DONE WITH METHODS AND ATTRIBUTES. 
