@@ -300,12 +300,66 @@
 #polymorphism can be achieved in python in two ways. in compile time languages there are 3 ways but python does not support method overloading. 
 #Method overloading means having same name methods inside a class but parameters will be different but in python the lastest definiton will overwrite the previous one.
 #(1)METHOD OVERRIDING :- 
-class Animal:
-     def show(self):
-         print("hello i am harry !")
-class Human(Animal):
+# class Animal:
+#      def show(self):
+#          print("hello i am harry !")
+# class Human(Animal):
+#     def show(self):
+#         print("how are you ? ")
+# obj=Human() # the class human has access of bith methods and attributes in clasS Animal and also of the methods and attributes in Human class.
+# obj.show()
+#NOTE:- METHOD OVERRIDING :- in the above example we can see that obj is of Human class so, the show() function printed would be of Human class. 
+# if someone asks you what is method overriding then explain him if you have a two classes one parent and child, the method of parent overrides by the childs method.
+#NOTE:- IN SIMPLE WORDS WE CAN SAY IS THAT THE CHILD CLASS OVVERRIDES THE PARENT'S METHOD BY DEFINING A METHOD WITH THE SAME NAME. 
+
+#METHOD OVERLOADING DOESN'T EXISTS IN PYTHON. 
+
+#(2) DUCK TYPING 
+#PYTHON FOLLOWS THE PHILOSOPHY:- IF IT WALKS LIKE A DUCK AND QUACKS LIKE A DUCK, IT MUST BE A DUCK. 
+# class Animal:
+#     def show(self):
+#         print(" i am showing ")
+# class Human:
+#     def show(self):
+#         print(" i am also showing !")
+
+# obj=Animal()
+# obj2=Human()
+# obj.show()   # we call a method, do not print it.
+# obj2.show()
+
+#NOTE :- IN DUCK TYPING, THERE ARE TWO DIFFERENT CLASSES WHOM DOESN'T HAVE ANY RELATIONSHIP WITH EACH OTHER, THEY HAVE NO INHERITANCE RELATIONSHIP. 
+#NOTE :- Duck Typing: Python focuses on what an object can do rather than what type/class the object belongs to. SIMPLE DEFINITION FOR DUCK TYPING. 
+#NOTE:- METHOD OVERRIDING WORKS WITH INHERITANCE IN PYTHON.
+
+
+
+#NOTE :- ENCAPSULATION :- putting data(variables) and code(functions) together in one place-inside a class.
+# it also means hiding internal details of the class and how things work, and only showing what is needed. 
+#it keeps data safe from being changed by mistake. 
+#it makes your code clean and easy to use. 
+#it gives control over what others can access or change. 
+# code example to understand why we need encapsulation :- 
+# class Factory:
+#     a="pune"
+#     def show(self):
+#         print(" i am a pune factory guy !")
+# obj=Factory()
+# obj.a="bhopal" # changing the attribute inside the class. 
+# print(obj.a)
+#NOTE:- in above code the object 'obj' has access to all methods and attributes of class but i don't wanna give it. so in this scenario we use encapsulation. 
+ 
+ #NOTE:- ACCESS MODIFIERS MEANS HOW WE GIVE ACCESS OF OUR ATTRIBUTES AND METHODS TO THE OBJECT OR INHERITED CLASSES. 
+ #NOTE:- THERE ARE 3 TYPES OF ACCESS MODIFIERS:-
+ #(1) PUBLIC ATTRIBUTES AND METHODS :- TILL NOW EVERY ATTRIBUTE AND METHOD WE CREATED ARE PUBLIC MEANS THE INHERITED CLASSES AND OBJECTS CAN ACCESS THEM NO MATTER WHAT.
+class Factory:
+    a="pune"
     def show(self):
-        print("how are you ? ")
-obj=Human() # the class human has access of bith methods and attributes in clasS Animal and also of the methods and attributes in Human class.
-obj.show()
-#NOTE:- METHOD OVERRIDING 
+        print("hello i am a pune facrory guy !")
+class Bhopal(Factory):
+    def show2(self):
+        print(super().a)
+obj=bhopal()
+
+    
+    
