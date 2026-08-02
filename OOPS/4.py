@@ -361,5 +361,7 @@ class Bhopal(Factory):
         print(super().a)
 obj=bhopal()
 
+#ENCAPSULATION ON HOLD !!!
+
     
     
