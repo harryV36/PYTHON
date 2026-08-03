@@ -350,18 +350,169 @@
 #NOTE:- in above code the object 'obj' has access to all methods and attributes of class but i don't wanna give it. so in this scenario we use encapsulation. 
  
  #NOTE:- ACCESS MODIFIERS MEANS HOW WE GIVE ACCESS OF OUR ATTRIBUTES AND METHODS TO THE OBJECT OR INHERITED CLASSES. 
+ #NOTE:- SIMPLE DEFINITION OF ACCESS MODIFIERS IS :- ACCESS MODIFIERS CONTROL THE ACCESSIBILITY/VISIBILITY OF ATTRIBUTES AND METHODS FROM OUTISDE THE CLASS AND THROUGH INHERITANCE. 
  #NOTE:- THERE ARE 3 TYPES OF ACCESS MODIFIERS:-
  #(1) PUBLIC ATTRIBUTES AND METHODS :- TILL NOW EVERY ATTRIBUTE AND METHOD WE CREATED ARE PUBLIC MEANS THE INHERITED CLASSES AND OBJECTS CAN ACCESS THEM NO MATTER WHAT.
-class Factory:
-    a="pune"
-    def show(self):
-        print("hello i am a pune facrory guy !")
-class Bhopal(Factory):
-    def show2(self):
-        print(super().a)
-obj=bhopal()
+# class Factory:
+#     a="pune"
+#     def show(self):
+#         print("hello i am a pune facrory guy !")
+# class Bhopal(Factory):
+#     def show2(self):
+#         print(super().a)
+# obj=Bhopal()
+# obj.show2()
+#NOTE :- IN ABOVE CODE EXAMPLE WE CAN SEE WE CAN ACCESS ALL THE METHODS AND ATTRIBUTES IN THE CLASS. THIS IS THE EXAMPLE OD PUBLIC ATTRIBUTES AND METHODS. 
 
-#ENCAPSULATION ON HOLD !!!
+#(2) PROTECTED ATTRIBUTES AND METHODS :- PYTHON CREATES PROTECTED MEMBERS USING A SINGLE UNDERSCORE BUT IT STILL CAN BE ACCESSED FROM OUTISDE THE CLASS SO YOU MIGHT WONDER WHATS THE POINT OF USING THEM. 
+#PYTHON DOESN'T ENFORCE PROTECTED ACCESS LIKE OTHER LANGUAGES(JAVA OR C++). BUT IT USES A NAMING CONVENTION TO TELL DEVELOPERS. 
+# class Factory:
+#     _a="pune"
+#     def _show(self):
+#         print("hello i am a pune facrory guy !")
+# class Bhopal(Factory):
+#     def show2(self):
+#         print(super()._a)
+# obj=Bhopal()
+# obj.show2()
 
+#NOTE:- Python does not strictly enforce protected access; _name is a naming convention indicating that the member is intended for internal/subclass use.
+
+#(3)Priavte Attributes and Methods :- 
+#(a) A private variable or method means :- it cannot be accessed by outside the class - only from inside the class where it is defined. 
+#(b) In python, we use two underscores(__) before the name to make it private. 
+ 
+# SAMPLE CODE TO UNDERSTAND :-
+# class demo:
+#     def __init__(self):
+#         self.name="public member"    #public
+#         self._age=21                 #protected
+#         self.__salary=50000          #private
     
+#     def show(self):
+#         print(" Inside the class:")
+#         print("public:",self.name)
+#         print("protected:",self._age)
+#         print("private:",self.__salary)
+
+# obj=demo()
+# obj.show()
+
+#ANOTHER CODE TO UNDERSTAND PRIVATE METHODS AND ATTRIBUTES :- 
+# class Factory:     
+#     __a="pune"     
+#     def __show(self):         
+#         print("hello i am a pune factory guy !")
+# class Bhopal(Factory):
+#     def show2(self):
+#         print(super().__a)
+#         print(super().__show())
+# obj=Bhopal()
+# obj.show2()
+
+
+#another code example :- 
+# class Factory:     
+#     __a="pune"     
+#     def __show(self):         
+#         print("hello i am a pune factory guy !")
+# obj=Factory()
+# print(obj.__a)      # ← Python reaches this first
+# obj.__show()        # ← Python never reaches this
+
+#NOTE:- Definition of Name Mangling: Python automatically changes a private member's name starting with __ to _ClassName__memberName to make it harder to access directly from outside the class.
+
+#HOW TO PRINT PRIVATE MEMBERS :-
+#(1) USING NAME MANGLING :- 
+# print(obj._Factory__a)
+# obj._Factory__show()
+
+
+#(2) THE PUBLIC METHOD WAY TO ACCESS THE PRIVATE DATA :- 
+# class Factory:
+#     __a="pune"
     
+#     def __show(self):
+#         print("hello i am pune guy ")
+    
+#     def display(self):     #public interface 
+#         print(self.__a)
+#         self.__show()
+# obj=Factory()
+# obj.display()
+
+#NOTE:- We don't necessarily want to hide the RESULT. We want to hide the INTERNAL IMPLEMENTATION of how that result is produced. THAT IS THE WORK OF PRIVATE ATTRIBUTES AND METHODS. 
+
+# ENCAPSULATION COMPLETED !! 
+
+
+
+#NOTE :- ABSTARCTION 
+#(1)PYTHON SUPPORTS ABSTRACTION, BUT IUT DOESN'T ENFORCE IT AS STRICTLY AS SOME LANGUAGES.PYTHON PROVIDES THE abc(Abstract Base Classes) module to implement abstraction. 
+#(2) ABSTRACTION IS USED TO SIMPLIFYING COMPLEX SYSTEMS BY FOCUSING ON ESSENTIAL FEATURES AND HIDING UNNECESSARY DETAILS. 
+#(3) IT IS USED TO DEFINE A COMMON INTERFACE FOR DIFFERENT SUBCLASSES. 
+#(4) WE ARE HERE TALKING ABOUT ABSTRACTION IN PYTHON. 
+#(5) IF YOU WANT TO SETUP UP SOME RULES WE USE ABSTRACTION HERE. :- An abstract class can define rules that subclasses are required to follow, such as implementing certain methods. 
+
+#NOTE:- CODE TO UNDERSTAND THE ABSTRACTION :- 
+class Square:
+    def __init__(self,side):
+        self.slide=slide
+class Circle:
+    def __init__(self,radius):
+        self.radius=radius
+#(1) we created this code in which we have two classes :- class Square and Class Circle and we have taken parameters side for class Square and radius for class Circle, now some one tells me that is wrong you should have included parameter into it. 
+#class Square:
+#     def __init__(self,side):
+#         self.side=side
+# class Circle:
+#     def __init__(self,radius):
+#         self.radius=radius
+# now for above code i'll assign certain rules that we should have parameter in the code also , every class that is being made it should have parameter and area. we establishing the rule that every class that will be created should have parameter and area so to do this we will use abstraction to establish the rule. 
+
+#NOTE :- NOW, how will the abstraction will be used :- using abstract classes and methods :-
+#(a) Abstract classes are classes that contains one or more abstract methods. 
+#(b) A method that is defined but not implemented in the abstract class. subclasses must provide the implementation. 
+#(c) example syntax :- 
+# from abc import ABC, abstractmethod
+
+# class Animal(ABC): # abstract class
+#     @abstractclassmethod
+#     def make_sound(self): #abstract method
+#         pass
+    
+# class Dog(Animal):
+#     def make_sound(self):
+#         print("Dog says woof ! ")
+# class cat(Animal):
+#     def make_sound(self):
+#         print("cat says meow !")
+
+
+# ANOTHER EXAMPLE CODE :- 
+from abc import ABC, abstractmethod
+class abstract(ABC):  # abstract class 
+    @abstractmethod
+    def perimeter(self): # abstract method
+        pass
+    @abstractmethod
+    def area(self): #abstractmethod
+        pass
+    
+class Square(abstract):
+    def __init__(self,side):
+        self.side=side
+        p=4(side)
+        a=(side^2)
+    def perimeter(self):
+        print(p)
+    def area(self):
+        print(a)
+        
+class Circle(abstract):
+    def __init__(self,radius):
+        self.radius=radius
+        c=(2)
+    def perimeter(self):
+        
+obj=Circle(7)
