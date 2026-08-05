@@ -455,12 +455,12 @@
 #(5) IF YOU WANT TO SETUP UP SOME RULES WE USE ABSTRACTION HERE. :- An abstract class can define rules that subclasses are required to follow, such as implementing certain methods. 
 
 #NOTE:- CODE TO UNDERSTAND THE ABSTRACTION :- 
-class Square:
-    def __init__(self,side):
-        self.slide=slide
-class Circle:
-    def __init__(self,radius):
-        self.radius=radius
+# class Square:
+#     def __init__(self,side):
+#         self.slide=slide
+# class Circle:
+    # def __init__(self,radius):
+    #     self.radius=radius
 #(1) we created this code in which we have two classes :- class Square and Class Circle and we have taken parameters side for class Square and radius for class Circle, now some one tells me that is wrong you should have included parameter into it. 
 #class Square:
 #     def __init__(self,side):
@@ -490,29 +490,120 @@ class Circle:
 
 
 # ANOTHER EXAMPLE CODE :- 
-from abc import ABC, abstractmethod
-class abstract(ABC):  # abstract class 
-    @abstractmethod
-    def perimeter(self): # abstract method
-        pass
-    @abstractmethod
-    def area(self): #abstractmethod
-        pass
-    
-class Square(abstract):
-    def __init__(self,side):
-        self.side=side
-        p=4(side)
-        a=(side^2)
-    def perimeter(self):
-        print(p)
-    def area(self):
-        print(a)
+# from abc import ABC, abstractmethod 
+# import math 
+# print(math.pi)
+# class abstract(ABC):  # abstract class 
+#     @abstractmethod
+#     def perimeter(self): # abstract method
+#         pass
+#     @abstractmethod
+#     def area(self): #abstractmethod
+#         pass
+# class Square(abstract):
+#     def __init__(self,side):
+#         self.side=side
+#     def perimeter(self):
+#         print(4*self.side)
+#     def area(self):
+#         print(self.side**2)
         
-class Circle(abstract):
-    def __init__(self,radius):
-        self.radius=radius
-        c=(2)
-    def perimeter(self):
-        
-obj=Circle(7)
+# class Circle(abstract):
+#     def __init__(self,radius):
+#         self.radius=radius
+#     def perimeter(self):
+#         print(2*math.pi*self.radius)
+#     def area(self):
+#         print(math.pi*self.radius**2)
+# obj=Square(2)
+# obj2=Circle(2)
+# obj.perimeter()
+# obj.area()
+# obj2.perimeter()
+# obj2.area()
+
+
+#NOTE :- DUNDER METHODS :- are special methods in python that starts and end with double underscore like this :- __init__. dunder also means double underscore and we write __init__ we also say this dunder init or dunder intilization. 
+# they gets calls automatically when you perform certain actions on an object. 
+#They help you:
+#(a) Customize behaviour of your class. 
+#(b) Make your class objects behave like built-in data types(like strings,lists,etc).
+# there are some more dunder methods :- 
+# some of the dunder methods define the structure of the object.
+# class Animal:
+#     def __init__(self,name,age):
+#         self.name=name
+#         self.age=age
+#     def __str__(self):    #NOTE :- WHAT THIS DUNDER METHOD DO IS THAT WHEN WE WRITE WE SOMETHING WE WANT TO SHOW TO THE USER IT DIRECTLY IS ACCESED BY OBJ WHENEVER WE PRINT THE OBJECT. AND ALSO SELF HAS THE LOCATION IN IT.  
+#          return (f"hello how are u ? and your name is {self.name} ")
+#     def __add__(self,other):   #NOTE:- SELF IS THE THING WHICH WE FIRSTLY WANT OT ADD AND OTHER IS ANOTHER THING WE WANT TO ADD. 
+#         sum=0
+#         for i in other:
+#             sum=sum+i.age
+            
+#         return (f"your sum of ages are {self.age + sum }")
+# obj=Animal("lion",12)
+# obj2=Animal("dolphin",14)    #NOTE :- HERE WE HAVE TWO OBJECTS WITH NAME AND AGE AND SUPOOSE WE WANT TO ADD AGES OF BOTH, SO WE WILL USE DUNDER METHOD __add__.
+# obj3=Animal("Rhino",20)
+# print(obj)
+# print(obj +(obj2,obj3)) # here we are adding ages of two objects. after adding two objects we are adding three objects here now.
+
+#NOTE:- 
+# IN PROGRAM WHAT WE DONE HAVE THAT WE ARE ADDING AGE OF THREE OBJECTS SO WHAT WE HAVE DONE IS THAT WE HAVE TAKEN 
+
+#NOTE :- THIS IS THE WAY TO ADD THREE OBJECTS :- 
+# def __add__(self,other):   #NOTE:- SELF IS THE THING WHICH WE FIRSTLY WANT OT ADD AND OTHER IS ANOTHER THING WE WANT TO ADD. 
+#         sum=0
+#         for i in other:
+#             sum=sum+i.age
+            
+#         return (f"your sum of ages are {self.age + sum }")
+# so for above program explaination refer to the gpt OOPS 4 PILLARS EXPLANATION. 
+# #NOTE :- BUT IF WE WANT TO ADD AGES OF TWO OBJECTS WE DO THIS :-
+# def __add__(self,other):
+#     return (f" your sum of ages is {self.age + other.age}")
+# obj=Animal("lion",12)
+# obj2=Animal("Giraffe",14)
+# print(obj + obj2)
+
+
+#NOTE :- DUNDER METHOD PRACTICE QUESTION :- 
+# class Student:
+#     def __init__(self,name,age,place):
+#         self.name=name
+#         self.age=age
+#         self.place=place
+#     def __str__(self):
+#         return (f" student name is {self.name}, age is {self.age}, place he lives {self.place}")
+#     def __sub__(self,other):
+#         return (f" your subratraction of the ages is {self.age - other.age}") 
+# obj=Student("akash",14,"Bhopal")
+# obj2=Student("ram",12,"Tokyo")
+# print(obj)
+# print(obj2)
+# print( obj - obj2 )
+
+class Employee:
+    def __init__(self,emp_name,age):
+        self.emp_name=emp_name
+        self.age=age
+    def __str__(self):
+        return (f" employe's name is {self.emp_name} and his/her age is {self.age}")
+    def ___sub__(self,other):
+        sub=0
+        for i in other:
+            sub=i.age-sub
+            return (f" your subtraction of the ages is {sub - self.age}")
+emp1=Employee("shubham",29)
+emp2=Employee("saurabh",26)
+emp3=Employee("priya",24)
+emp4=Employee("subhangi",20)
+# print(emp1)
+# print(emp2)
+# print(emp3)
+# print(emp4)
+print(emp1 - (emp2,emp3,emp4))
+
+#NOTE :- THE OOPS AND DUNDER METHODS ARE COMPLETED. 
+#NOTE:- WE HAVE TO WORK ON ABOVE PROGRAM WHICH IS LESS BASED ON USING ___sub___ dunder method but more like how to turn mathematical logic into a code. 
+#NOTE:- also we have to write a class product code where we will implement all dunder methods together into a one class. 
